@@ -7,15 +7,17 @@ public class JuegoAdivinanza {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        int numeroSecreto = random.nextInt(50) + 1; // Número entre 1 y 50
+
+        System.out.println("Bienvenido al juego de adivinanzas");
+        System.out.println("En este juego tendrás que adivinar un número entre el 1 y el 50, podrás decidir si quieres tener 5, 10 o 15 intentos. Buena suerte.");
+
+        int numeroSecreto = random.nextInt(50) + 1; 
         int intentos = 0;
         int maxIntentos = 0;
-        int intentoUsuario = -1; // Inicializar para evitar error
+        int intentoUsuario = -1; 
 
-        System.out.println("¡Bienvenido al juego de adivinanzas!");
-        System.out.println("¿Cuántos intentos quieres tener? (5, 10 o 15): ");
 
-        // Validar número de intentos
+       
         while (true) {
             maxIntentos = scanner.nextInt();
             if (maxIntentos == 5 || maxIntentos == 10 || maxIntentos == 15) {
@@ -25,7 +27,7 @@ public class JuegoAdivinanza {
             }
         }
 
-        // Juego principal
+     
         while (intentos < maxIntentos) {
             System.out.print("Intento #" + (intentos + 1) + " - Adivina el número (entre 1 y 50): ");
             intentoUsuario = scanner.nextInt();
